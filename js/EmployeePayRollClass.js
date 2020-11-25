@@ -36,7 +36,10 @@ class EmployeePayRoll
  
    get note() { return this._note; }
    set note(note) { 
-     this._note = note; 
+       if(note == "")
+       this._note = "Empty"
+       else
+       this._note = note; 
    }
    //Date validation
    get startDate() { return this._startDate; }

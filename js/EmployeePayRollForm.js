@@ -84,7 +84,7 @@ const createEmployeePayroll=()=>
 { 
     let employeePayrollData = new EmployeePayRoll();
     employeePayrollData.name = getInputElementValue('#Name');
-    employeePayrollData.profilePic = getSelectedValues('[name=profilepic]').pop();
+    employeePayrollData.profilePic = getSelectedValues('[name=profilePic]').pop();
     employeePayrollData.gender = getSelectedValues('[name=gender]').pop(); 
     employeePayrollData.department = getSelectedValues('[name=department]');
     employeePayrollData.salary = getInputElementValue('#salary');
@@ -109,4 +109,11 @@ const getInputElementValue = (id) =>
 {
     let value = document.querySelector(id).value;
     return value; 
+}
+//creating id
+const createNewEmployeeId = () => {
+    let empID = localStorage.getItem("EmployeeID");
+    empID = !empID ? 1 : (parseInt(empID)+1).toString();
+    localStorage.setItem("EmployeeID",empID);
+    return empID;
 }
