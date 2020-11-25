@@ -4,7 +4,7 @@ window.addEventListener('DOMContentLoaded', ()=>{
 });
 
 const createEmployeeTable = ()=>{
-   employeeList = createJsonFile();
+    employeeList = JSON.parse(localStorage.getItem("NewEmployeePayrollList"));
    let innerHtml = "<tr><th></th><th>Name</th><th>Gender</th><th>Department</th><th>Salary</th><th>Start Date</th><th>Actions</th></tr>";
     for (const empPayrollData of employeeList) {
         innerHtml = `${innerHtml}
